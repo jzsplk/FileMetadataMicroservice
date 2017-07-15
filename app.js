@@ -29,7 +29,9 @@ app.get('/dateValues/:dateVal', function(req, res, next){
     res.json({unix: unixDate, natural: naturalDate});
 });
 
-app.get('/', (req, res) => res.render('index') )
+app.get('/', function(req, res){
+  res.sendFile(__dirname + "/views/index.html")
+})
 
 app.listen(3000, function(){
     console.log("It's  working");
